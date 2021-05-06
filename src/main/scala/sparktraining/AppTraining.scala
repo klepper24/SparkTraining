@@ -6,10 +6,9 @@ object AppTraining extends App {
 //  println("Hello")
     val spark = SparkSession
       .builder()
-      .master("local")
       .appName("SparkTraining")
       .getOrCreate()
 
-    val df = spark.read.csv("C:\\SparkTraining\\gender_submission.csv")
+    val df = spark.read.csv(args(0))
     df.show()
 }
